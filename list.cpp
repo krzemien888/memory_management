@@ -18,6 +18,7 @@ class List
 {
 public:
     List();
+    ~List();
     void add(Node* node);        // dodaje element na koniec listy
     Node* get(const int value);  // zwraca element o wskazanej wartości
 
@@ -74,6 +75,24 @@ Node* List::get(const int value)
     }
 }
 
+List::~List()
+{
+    if(!first)
+    {
+	while(first->next != nullptr)
+	{
+
+	        Node* currToDelete = first;
+ 		while(currToDelete->next != nullptr)
+		{
+	 	   	currToDelete = currToDelete->next;
+		}
+		delete currToDelete;
+	}
+	delete first;
+    }
+}
+
 int main()
 {
     List lista;
@@ -84,6 +103,7 @@ int main()
     lista.add(new Node(2));
     lista.add(node7);
     lista.add(new Node(9));
+
     auto node = lista.get(1);
 
     return 0;
