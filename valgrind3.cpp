@@ -3,6 +3,19 @@
 
 using namespace std;
 
+class MyLogicError : public std::logic_error{
+public:
+	explicit MyLogicError(const string& what_arg)
+		: std::logic_error(what_arg)
+	{};
+	explicit MyLogicError(const char* what_arg)
+		: std::logic_error(what_arg)
+	{};
+
+
+};
+
+
 class Resource
 { 
 public:
@@ -11,10 +24,12 @@ public:
         cout << "Using resource. Passed " << *N << endl;
         if (*N == 'd')
         {
-            throw logic_error("Passed d. d is prohibited.");
+            throw MyLogicError("Passed d. d is prohibited.");
         }
     };
 };
+
+
 
 int main(int argc, char* argv[])
 {
@@ -31,7 +46,7 @@ int main(int argc, char* argv[])
         rsc->use(N);
         delete rsc;
     }
-    catch (logic_error & e)
+    catch (MyLogicError & e)
     {
         cout << e.what() << endl;
     }

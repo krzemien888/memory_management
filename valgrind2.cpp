@@ -26,6 +26,7 @@ int main()
 {
     vector<int*> num = allocate_ints();
     cout << "Hello World!" << endl;
+    deallocate_ints(num);
     return 0;
 }
 
