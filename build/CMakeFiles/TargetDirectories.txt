@@ -1,0 +1,6 @@
+/home/paro/repo/memory_management/build/CMakeFiles/edit_cache.dir
+/home/paro/repo/memory_management/build/CMakeFiles/rebuild_cache.dir
+/home/paro/repo/memory_management/build/CMakeFiles/valgrind1.dir
+/home/paro/repo/memory_management/build/CMakeFiles/valgrind2.dir
+/home/paro/repo/memory_management/build/CMakeFiles/list.dir
+/home/paro/repo/memory_management/build/CMakeFiles/valgrind3.dir
